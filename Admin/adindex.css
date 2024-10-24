@@ -1,0 +1,1295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Dashboard File */
+
+.upper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  background-color: rgba(0, 0, 0, 0.886);
+  display: flex;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.upper img {
+  width: 50px;
+  height: 50px;
+  margin-left: 200px;
+}
+
+.upper a {
+  margin-right: 60px;
+  margin-top: 7px;
+}
+.upper a button {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: aqua;
+  cursor: pointer;
+  border: none;
+}
+
+.upper a button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.canshow {
+  position: fixed;
+  top: 5px;
+  left: 30px;
+  height: 45px;
+  width: 45px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+  z-index: 99;
+}
+
+.canshow span {
+  color: black;
+  font-size: 28px;
+  line-height: 45px;
+}
+
+.nav {
+  background-color: rgba(127, 255, 212, 0.845);
+  color: black;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  transition: left 0.4s ease;
+  top: 50px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav.pop {
+  left: -600px;
+}
+
+.nav .top {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.nav .top img {
+  width: 90px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.nav .top .text {
+  margin-top: 15px;
+}
+
+.nav .top .text .name {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+  margin-bottom: 15px;
+}
+
+.nav .top .text .pson {
+  color: blue;
+  font-family: serif;
+}
+
+.nav .top .text .pson i {
+  font-weight: bold;
+  font-size: small;
+  margin-right: 1px;
+}
+
+.nav ul {
+  background-color: aquamarine;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.nav ul li:nth-child(1) {
+  border-top: 1px solid blue;
+}
+
+.nav ul li:nth-child(13) {
+  height: 95px;
+}
+
+.nav ul li {
+  line-height: 45px;
+  border-bottom: 1px solid blue;
+  width: 100%;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 30px;
+  font-weight: bold;
+  border-left: 4px solid transparent;
+  position: relative;
+}
+
+.nav ul li a i {
+  margin-right: 5px;
+}
+
+.nav ul li a span {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  transition: 0.4s ease;
+}
+
+.nav ul li a:hover span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.nav ul li a:hover,
+.nav ul li #active {
+  color: blue;
+  background-color: aqua;
+  border-left-color: blue;
+}
+
+.nav ul .sub {
+  position: static;
+  display: none;
+}
+
+.nav ul .sub li a:hover {
+  background-color: aqua;
+}
+.nav ul ul li {
+  border-bottom: none;
+  line-height: 35px;
+}
+
+.nav li .sub li:nth-child(1) {
+  border-top: none;
+}
+
+.nav ul ul li a {
+  padding-left: 75px;
+  font-size: 15px;
+}
+
+.nav ul .sub.show {
+  display: block;
+}
+
+.main {
+  margin-top: 10px;
+  margin-left: 280px;
+  margin-right: 20px;
+}
+
+.main.resize {
+  margin-left: 60px;
+  transition: 0.4s ease;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.head {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+main hr {
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.dashboard .info {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+  height: 150px;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0px 10px 0px;
+  margin-top: 30px;
+  margin-left: 10px;
+  color: white;
+}
+
+.dashboard .info .num h1 {
+  margin-bottom: 40px;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.dashboard .info a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dashboard .info .num h3 {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.dashboard .info .icon img {
+  width: 80px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.dashboard #admin {
+  background-color: brown;
+}
+
+.dashboard #doctor {
+  background-color: purple;
+}
+
+.dashboard #patient {
+  background-color: rgb(255, 0, 153);
+}
+
+.dashboard #report {
+  background-color: rgb(255, 140, 0);
+}
+
+.dashboard #job {
+  background-color: navy;
+}
+
+.dashboard #income {
+  background-color: green;
+}
+
+.dashboard #msg {
+  background-color: rgb(48, 160, 160);
+}
+
+.dashboard #dis {
+  background-color: grey;
+}
+
+/*Alert Code */
+
+#customAlert {
+  position: fixed;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f9fa;
+  padding: 25px;
+  border: 2px solid red;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+  border-radius: 5px;
+  transition: 0.9s ease;
+}
+
+#customAlert p {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+#customAlert button {
+  margin-top: 10px;
+  padding: 7px 13px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 40%;
+  font-weight: bold;
+}
+
+#customAlert button:hover {
+  background-color: rgba(255, 0, 0, 0.603);
+  color: black;
+}
+
+/* Edit Profile File */
+
+main .editprof {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+main .editprof .left div,
+main .editprof .right div {
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+
+main .editprof .left div p,
+main .editprof .right div p {
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 5px;
+}
+
+main .editprof .left div input,
+main .field input,
+main .editprof .right div input {
+  padding: 9px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+main .editprof .right div img {
+  width: 320px;
+  height: 320px;
+}
+
+main .sbmt {
+  text-align: center;
+  margin-top: 60px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+main .sbmt input {
+  padding: 10px;
+  cursor: pointer;
+  background-color: blue;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+main .sbmt input:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+/* Change Password File */
+
+main #changepass {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+main #changepass .left div {
+  margin-bottom: 20px;
+}
+
+/* Add Admin File */
+
+main form h3 {
+  text-align: center;
+  margin-right: 80px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: blue;
+}
+
+main #add .left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+main #add .left div {
+  margin-bottom: 5px;
+  margin-top: 30px;
+  margin-right: 70px;
+  margin-left: 70px;
+}
+
+main #addadm {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+main .alladm h3 {
+  text-align: center;
+  margin-right: 80px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 20px;
+}
+
+main .alladm div table {
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 95%;
+  margin-bottom: 50px;
+}
+
+main .alladm div table td {
+  padding: 5px;
+  text-align: center;
+}
+
+main .alladm table td button {
+  background-color: rgb(228, 24, 24);
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+  width: 50%;
+  height: 40px;
+  font-weight: bold;
+}
+
+main .alladm table td button i {
+  margin-left: 5px;
+}
+
+main .alladm table td button:hover {
+  background-color: rgb(167, 12, 12);
+}
+
+main .alladm table td img {
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+/* Add Student & Teacher & Parent File */
+
+main .frmup {
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 50px;
+}
+
+main .frmup h1 {
+  text-align: center;
+  color: blue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+main .frmup p {
+  text-align: center;
+  margin-top: 30px;
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+main .frmup span {
+  font-weight: bold;
+}
+
+main .frmdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 130px;
+  margin-left: 190px;
+}
+
+main .frmdown .field {
+  margin-bottom: 20px;
+}
+
+main .frmdown .field label {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+
+main .frmdown .field p {
+  margin-top: 8px;
+  font-weight: bold;
+  border: 2px solid aquamarine;
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+main .frmdown .field p i {
+  font-weight: bold;
+  color: blue;
+  font-size: 1.1rem;
+}
+
+main .frmdown .field p input,
+main .frmdown .field p select {
+  width: 92%;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+main .frmdown .field textarea {
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  border-color: aqua;
+
+  border-radius: 5px;
+}
+
+main .sbtfrm {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+main .sbtfrm input {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+main .sbtfrm input:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+/* View Student File */
+
+main #filterform {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 60px;
+  margin-right: 40px;
+  margin-top: 15px;
+}
+
+main #filsub {
+  margin-top: 23px;
+  margin-bottom: 0px;
+  margin-right: 20px;
+}
+
+main .alladm .pagination {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: -15px;
+}
+
+main .alladm .pagination a {
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+main .alladm .pagination a:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+main .alladm table td #app {
+  background-color: green;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+  width: 45%;
+  margin-right: 4px;
+  height: 40px;
+  font-weight: bold;
+}
+
+main .alladm table td #app:hover {
+  background-color: rgb(18, 229, 18);
+  color: black;
+  transition: 0.4s ease;
+}
+
+main .alladm table td #rej {
+  background-color: rgb(228, 24, 24);
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+  width: 40%;
+  height: 40px;
+  font-weight: bold;
+}
+
+main .alladm table td #rej:hover {
+  background-color: rgb(195, 40, 40);
+  color: black;
+  transition: 0.4s ease;
+}
+
+main .alladm table td #app i {
+  margin-left: 5px;
+}
+
+main .alladm table td a {
+  text-decoration: none;
+  color: black;
+}
+
+main .alladm table td a:hover {
+  color: blue;
+}
+
+main .alladm table td #rej i {
+  margin-left: 5px;
+}
+
+main .alladm table td input {
+  padding: 9px;
+}
+
+main .alladm .infohght {
+  max-height: 70vh;
+}
+
+/* View Student and Teacher Profile File */
+
+main .profinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px;
+}
+
+main .profinfo h3 {
+  color: blue;
+  font-weight: bold;
+}
+
+main .profinfo .left img {
+  width: 60%;
+  height: 250px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+main .profinfo .left h3 {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 110px;
+}
+
+main .profinfo .left h6 {
+  font-weight: bold;
+  margin-left: 120px;
+}
+
+main .profinfo .left span,
+main .profinfo .right span {
+  color: blue;
+}
+
+main .profinfo .right #lnk:hover,
+main .profinfo .left #lnk:hover {
+  color: rgb(239, 5, 5);
+}
+
+main .profinfo .right p,
+main .profinfo .left p {
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+main .profinfo .left a,
+main .profinfo .right a {
+  text-decoration: none;
+}
+
+main .profinfo .left a button {
+  padding: 10px;
+  background-color: blue;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+main .profinfo .left a button:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+main .profinfo .left table {
+  margin-top: 20px;
+}
+
+main .profinfo .left table th,
+main .profinfo .left table td {
+  padding: 10px;
+  text-align: center;
+}
+
+main .profinfo .right h4 {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+}
+
+/* Manage Class File */
+
+main #assbtn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Manage Subject File */
+
+main .managesub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+main .managesub #subfrm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+/* Insert Marks File */
+.markhint p {
+  text-align: center;
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.markhint p span {
+  font-weight: bold;
+}
+
+/* MailBox File */
+
+main #mailhead {
+  display: flex;
+  justify-content: space-around;
+}
+
+main #mailhead h3 span {
+  background-color: red;
+  color: white;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+main #mailhead a {
+  margin-top: 20px;
+}
+
+main #mailhead a button {
+  background-color: blue;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+main #mailhead a button:hover {
+  background-color: aqua;
+  color: black;
+  padding: 13px;
+}
+
+main .mailsec {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .mailsec .left {
+  min-width: 250px;
+  min-height: 66vh;
+  padding: 10px;
+  background-color: #d5d8dc;
+  border-radius: 10px;
+}
+
+main .mailsec .left div {
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+main .mailsec .left div p {
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+main .mailsec .left div span {
+  margin-left: 20px;
+  background-color: rgba(0, 0, 0, 0.598);
+  color: white;
+  padding: 6px;
+  border-radius: 10px;
+  font-size: small;
+}
+
+main .mailsec .left hr {
+  margin-top: 9px;
+  margin-bottom: 9px;
+  width: 100%;
+}
+
+main .mailsec .right {
+  margin: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+main .mailsec .right .up {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+main .mailsec .right .up p {
+  margin-bottom: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: blue;
+}
+
+main .mailsec .right .up p span {
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+main .mailsec .right .up p button {
+  background-color: aquamarine;
+  padding: 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+main .mailsec .right .up p button:hover {
+  background-color: blue;
+  color: white;
+}
+
+main .mailsec .right .down {
+  margin-top: 20px;
+}
+
+main .mailsec .right .down h3 {
+  color: blue;
+}
+main .mailsec .right .down h3 span {
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+main .mailsec .right .down p {
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+main .mailsec .right h3 {
+  text-align: center;
+  color: blue;
+  margin-bottom: 20px;
+}
+main #mailfrm {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+main #mailfrm div {
+  display: flex;
+  margin-bottom: 26px;
+}
+
+main #mailfrm div p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 60%;
+}
+
+main #mailfrm div p,
+main #mailfrm div textarea {
+  margin-left: 20px;
+}
+
+/* Media Screen */
+
+@media (max-width: 1500px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  main .frmup {
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 50px;
+  }
+
+  main .frmdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 250px;
+    margin-right: 5px;
+  }
+
+  main .alladm {
+    overflow-x: scroll;
+  }
+
+  main .alladm table td,
+  main .alladm table th {
+    padding: 5px;
+  }
+
+  main .alladm table td #app {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  main .alladm table td #rej {
+    width: 100%;
+  }
+
+  main .frmup {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 50px;
+  }
+
+  main .frmdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+
+  main #filterform {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 30px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  main .profinfo .left h3 {
+    font-size: large;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav {
+    width: 220px;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 230px;
+    margin-right: 5px;
+  }
+
+  main .alladm div table {
+    overflow-x: scroll;
+  }
+
+  main .alladm table td button {
+    width: 100%;
+  }
+
+  main .alladm table td #app {
+    width: 100%;
+  }
+
+  main .alladm table td #rej {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    width: 210px;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 210px;
+    margin-right: 5px;
+  }
+
+  main .editprof {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  .dashboard .info {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  main .frmup {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+  }
+
+  main .frmdown {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  main .frmdown .field p {
+    width: 95%;
+  }
+
+  main #filterform {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  main .managesub {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  main .mailsec {
+    overflow-x: scroll;
+  }
+
+  main .mailsec .left {
+    min-width: 200px;
+    min-height: 66vh;
+  }
+
+  main .mailsec .right {
+    min-width: 200px;
+  }
+
+  main .mailsec .right .up {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main #mailfrm div {
+    display: flex;
+    margin-bottom: 26px;
+    flex-direction: column;
+  }
+
+  main #mailfrm div p {
+    margin-top: 10px;
+    width: 90%;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 210px;
+    margin-right: 5px;
+  }
+
+  .upper img {
+    width: 50px;
+    height: 50px;
+    margin-left: 150px;
+  }
+
+  .upper a {
+    margin-right: 20px;
+    margin-top: 7px;
+  }
+
+  .nav {
+    left: -600px;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav.pop {
+    left: 0px;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+  }
+
+  .main.resize {
+    margin-left: 210px;
+    transition: 0.4s ease;
+  }
+
+  main .alladm {
+    margin-bottom: 50px;
+  }
+
+  main .profinfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 415px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    width: 210px;
+  }
+
+  .dashboard .info {
+    width: 220px;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 210px;
+    margin-right: 5px;
+  }
+
+  .upper img {
+    width: 50px;
+    height: 50px;
+    margin-left: 150px;
+  }
+
+  .upper a {
+    margin-right: 20px;
+    margin-top: 7px;
+  }
+
+  .nav {
+    left: -600px;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav.pop {
+    left: 0px;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+  }
+
+  .main.resize {
+    margin-left: 210px;
+    transition: 0.4s ease;
+  }
+
+  main .alladm {
+    margin-bottom: 50px;
+  }
+
+  main .profinfo {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+}
